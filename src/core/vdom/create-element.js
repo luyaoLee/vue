@@ -87,6 +87,7 @@ export function _createElement (
     data.scopedSlots = { default: children[0] }
     children.length = 0
   }
+  // 规范 children类型，使之都成为 vnode 类型。这样就可以通过 vnodeTree来描述整个 DOM 结构
   if (normalizationType === ALWAYS_NORMALIZE) {
     children = normalizeChildren(children)
   } else if (normalizationType === SIMPLE_NORMALIZE) {
@@ -122,6 +123,7 @@ export function _createElement (
     }
   } else {
     // direct component options / constructor
+    // 生成组件 vnode
     vnode = createComponent(tag, data, context, children)
   }
   if (Array.isArray(vnode)) {

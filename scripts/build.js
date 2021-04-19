@@ -25,6 +25,7 @@ if (process.argv[2]) {
 
 build(builds)
 
+// 通过 rollup 逐个构建
 function build (builds) {
   let built = 0
   const total = builds.length

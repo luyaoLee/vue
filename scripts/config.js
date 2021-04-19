@@ -213,6 +213,7 @@ const builds = {
   }
 }
 
+// 生成不同环境配置
 function genConfig (name) {
   const opts = builds[name]
   const config = {

@@ -30,6 +30,7 @@ export default class Dep {
 
   depend () {
     if (Dep.target) {
+      // 把当前属性的dep收集起来
       Dep.target.addDep(this)
     }
   }

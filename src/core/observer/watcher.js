@@ -128,8 +128,10 @@ export default class Watcher {
   addDep (dep: Dep) {
     const id = dep.id
     if (!this.newDepIds.has(id)) {
+      // 当前watcher将新改动的属性dep收集
       this.newDepIds.add(id)
       this.newDeps.push(dep)
+      // 如果之前没有订阅过该watcher，那么将当前的watcher添加到该属性dep里面去。
       if (!this.depIds.has(id)) {
         dep.addSub(this)
       }
